@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    color: #FFFFFF;
+    background-color: #222222;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2 {
+    color: #CCFFCC;
+}
+
+a {
+    color: #CCCCFF;
+}
+
+footer p{
+    display: block;
+    text-align: center;
+}
+
+footer a {
+    margin-left: 10px;
+}
+
+img {
+    width: 100px;
+}
