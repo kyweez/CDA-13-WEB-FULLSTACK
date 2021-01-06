@@ -13,8 +13,62 @@ h1, h2 {
     color: #CCFFCC;
 }
 
+h1 {
+    background-color: #224422;
+}
+
+main, section, article {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 a {
     color: #CCCCFF;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #224422;
+}
+
+img {
+    background-color: #224422;
+    width: 100px;
+}
+
+ul {
+    background-color: #224422;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-right: 5px;
+}
+
+nav {
+    background-color: #224422;
+}
+
+#nav-list li {
+    list-style: none;
+    background-color: #2a552a;
+    padding: 5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#nav-list a {
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#main-title {
+    font-size: 34px;
+}
+
+#nav-list li:hover{
+    background-color: #467c46;
 }
 
 footer p{
@@ -24,8 +78,4 @@ footer p{
 
 footer a {
     margin-left: 10px;
-}
-
-img {
-    width: 100px;
 }
