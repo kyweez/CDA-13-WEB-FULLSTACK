@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Freelancer.Models
 {
     public class Job
     {
+        /// <summary>
+        /// [DataType(DataType.Date)]: The [DataType] attribute specifies the type of the data (Date). With this attribute:
+        /// The user isn't required to enter time information in the date field.
+        /// Only the date is displayed, not time information.
+        /// </summary>
+        [DataType(DataType.Date)]
+
         #region ############### PROPERTIES ###############
-        public int Id
+        public int ID
         {
             get; private set;
         }
