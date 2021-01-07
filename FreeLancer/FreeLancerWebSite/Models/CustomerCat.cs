@@ -1,6 +1,6 @@
-﻿namespace FreeLancer.Models
+﻿namespace FreeLancerWebSite.Models
 {
-    public class Customer
+    public class CustomerCat
     {
         #region ############### PROPERTIES ###############
         public int ID
@@ -13,7 +13,7 @@
             get; private set;
         }
 
-        public string Email
+        public string Description
         {
             get; private set;
         }
