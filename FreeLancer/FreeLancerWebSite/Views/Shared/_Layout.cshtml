@@ -8,21 +8,43 @@
 
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7c8384bac2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header id="header-id">
+    <div id="global-container">
+        <header id="header-id">
+            <img id="logo" src="~/img/TP_Freelancer_logo.jpg" alt="Logo Freelancer" />
 
-    </header>
-    
-    <main id="main-id">
-        @RenderBody()
-    </main>
+            <nav id="nav-menu">
+                <ul id="ul-menu">
 
-    <footer id="main-footer">
+                    <li class="button-menu" aria-label="Bouton clients">
+                        <a href="" class="a-menu"><i class="fas fa-users"></i>Clients</a>
+                    </li>
 
+                    <li class="button-menu" aria-label="Bouton missions">
+                        <a href="" class="a-menu"><i class="fas fa-coffee"></i>Missions</a>
+                    </li>
 
-    </footer>
+                    <li class="button-menu" aria-label="Bouton devis et factures">
+                        <a href="" class="a-menu"><i class="fas fa-calculator"></i>Devis & Factures</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-id">
+            @RenderBody()
+        </main>
+
+        <footer id="footer-id">
+            <div id="top-footer"></div>
+            <div id="bot-footer"></div>
+        </footer>
+    </div>
+
 </body>
 
 </html>

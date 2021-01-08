@@ -1,2 +1,121 @@
-﻿body {
+﻿:root {
+    /* COLORS */
+    --blackBackground: #111;
+    --beigeBackground: #FAF7F5;
+    --greyFont: #45505E;
+    --greenBackground: #38DD09;
+    --purpleHover: #3809DD;
+    --greyFooter: #EBEFF2;
+
+    /* FONT SIZES */
+    --f12: 0.75rem;
+    --f13: 0.8125rem;
+    --f14: 0.875rem;
+    --f15: 0.9375rem;
+    --f16: 1rem;
+    --f17: 1.0625rem;
+    --f18: 1.125rem;
+    --f19: 1.1875rem;
+    --f20: 1.25rem;
 }
+
+/* ###################### GENERAL ###################### */
+* {
+   box-sizing:border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+    font-size: calc(1em * .625);
+}
+
+
+body {
+    background-color: var(--beigeBackground);
+    width: 100vw;
+    font-size: 1.4em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#global-container {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    margin-top: 4vh;
+    border: 1px solid var(--greyFont);
+    border-radius: 4px;
+}
+
+/* ###################### HEADER ###################### */
+#header-id {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 80px;
+    margin-left: 30px;
+}
+
+#nav-menu {
+    margin-right: 30px;
+    height: 80px;
+}
+
+#ul-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.button-menu {
+    margin-left: 2rem;
+    height: 60%;
+    border : 1px solid var(--greyFont);
+}
+
+.a-menu {
+    display: block;
+    height: 100%;
+    padding: 1rem;
+    font-size : 2rem;
+    color: var(--greyFont);
+}
+
+i {
+        margin-right: 1rem;
+}
+
+#ul-menu .button-menu:last-child a{
+    color: white;
+    border: 1px solid black;
+    background-color: var(--greenBackground);
+}
+
+.a-menu:hover, #ul-menu .button-menu:last-child a:hover {
+    background-color: var(--purpleHover);
+    border: 1px solid black;
+    color: white;
+}
+
+/* ###################### FOOTER ###################### */
+#main-id{
+    width: 100%;
+    background-color: greenyellow;
+    min-height: 70vh;
+}
+
+/* ###################### FOOTER ###################### */
