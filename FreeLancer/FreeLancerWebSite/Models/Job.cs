@@ -1,11 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FreeLancerWebSite.Models
 {
+    [Table("jobs")]
     public class Job
     {
         #region ############### PROPERTIES ###############
+        [Key]
+        [Column("job_id")]
         public int ID
         {
             get; private set;
