@@ -6,17 +6,6 @@
     --greenBackground: #38DD09;
     --purpleHover: #3809DD;
     --greyFooter: #EBEFF2;
-
-    /* FONT SIZES */
-    --f12: 0.75rem;
-    --f13: 0.8125rem;
-    --f14: 0.875rem;
-    --f15: 0.9375rem;
-    --f16: 1rem;
-    --f17: 1.0625rem;
-    --f18: 1.125rem;
-    --f19: 1.1875rem;
-    --f20: 1.25rem;
 }
 
 /* ###################### GENERAL ###################### */
@@ -30,7 +19,6 @@
 html {
     font-size: calc(1em * .625);
 }
-
 
 body {
     background-color: var(--beigeBackground);
@@ -99,7 +87,7 @@ i {
         margin-right: 1rem;
 }
 
-#ul-menu .button-menu:last-child a{
+#ul-menu .button-menu:last-child a {
     color: white;
     border: 1px solid black;
     background-color: var(--greenBackground);
@@ -112,7 +100,7 @@ i {
 }
 
 /* ###################### FOOTER ###################### */
-#main-id{
+#main-id {
     width: 100%;
     background-color: greenyellow;
     min-height: 70vh;
