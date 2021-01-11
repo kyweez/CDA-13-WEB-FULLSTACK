@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace FreeLancerWebSite.Models
 {
     [Table("customers")]
-    public class Customer
+    public class CustomerModel
     {
         #region ############### PROPERTIES ###############
         [Key]
-        [Column("customer_id")]
+        [Column("customer_id", Order = 1)]
         public int ID
         {
             get; set;
         }
 
-        [Column("customer_name")]
+        [Column("customer_name", Order = 2)]
         [MaxLength(100)]
         [DataType(DataType.Text)]
         public string Name
@@ -22,16 +22,14 @@ namespace FreeLancerWebSite.Models
             get; set;
         }
 
-        [Column("customer_email")]
-        [MaxLength(100)]
+        [Column("customer_email", Order = 3)]
         [Required]
+        [MaxLength(255)]
         [DataType(DataType.EmailAddress)]
         public string Email
         {
             get; set;
         }
-
-
         #endregion
     }
 }
