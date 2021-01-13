@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7c8384bac2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="global-container">
+        <header id="header-id">
+            <img id="logo" src="~/img/TP_Freelancer_logo.jpg" alt="Logo Freelancer" />
+
+            <nav id="nav-menu">
+                <ul id="ul-menu">
+
+                    <li class="button-menu" aria-label="Bouton clients">
+                        <a href="" class="a-menu"><i class="fas fa-users"></i>Clients</a>
+                    </li>
+
+                    <li class="button-menu" aria-label="Bouton missions">
+                        <a href="" class="a-menu"><i class="fas fa-coffee"></i>Missions</a>
+                    </li>
+
+                    <li class="button-menu" aria-label="Bouton devis et factures">
+                        <a href="" class="a-menu"><i class="fas fa-calculator"></i>Devis & Factures</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-id">
+            @RenderBody()
+        </main>
+        
+        <footer id="footer-id">
+            <div id="top-footer">
+                <ul id="ul-footer">
+                    <li class="link-footer">
+                        <a class="a-footer" href="#">Accueil</a>
+                    </li>
+
+                    <li class="dot-separation">
+                        <p>&#x2688;</p>
+                    </li>
+
+                    <li class="link-footer">
+                        <a class="a-footer" href="#">Clients</a>
+                    </li>
+
+                    <li class="dot-separation">
+                        <p>&#x2688;</p>
+                    </li>
+
+                    <li class="link-footer">
+                        <a class="a-footer" href="#">Missions</a>
+                    </li>
+
+                    <li class="dot-separation">
+                        <p>&#x2688;</p>
+                    </li>
+
+                    <li class="link-footer">
+                        <a class="a-footer" href="#">Devis & factures</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="bot-footer">
+                <p>&copy; Copyright 2021 - @ViewBag.Author</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

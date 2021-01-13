@@ -1,0 +1,163 @@
+﻿:root {
+    /* COLORS */
+    --blackBackground: #111;
+    --beigeBackground: #FAF7F5;
+    --greyFont: #45505E;
+    --greenBackground: #38DD09;
+    --purpleHover: #3809DD;
+    --greyFooter: #EBEFF2;
+}
+
+/* ###################### GENERAL ###################### */
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: calc(1em * .625);
+}
+
+body {
+    background-color: var(--beigeBackground);
+    width: 100vw;
+    font-size: 1.4em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#global-container {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    margin-top: 4vh;
+    border: 1px solid var(--greyFont);
+    border-radius: 4px;
+}
+
+/* ###################### HEADER ###################### */
+#header-id {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 80px;
+    margin-left: 30px;
+}
+
+#nav-menu {
+    margin-right: 30px;
+    height: 80px;
+}
+
+#ul-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.button-menu {
+    margin-left: 2rem;
+    height: 60%;
+    border: 1px solid var(--greyFont);
+}
+
+.a-menu {
+    display: block;
+    height: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--greyFont);
+}
+
+i {
+    margin-right: 1rem;
+}
+
+#ul-menu .button-menu:last-child a {
+    color: white;
+    border: 1px solid black;
+    background-color: var(--greenBackground);
+}
+
+.a-menu:hover, #ul-menu .button-menu:last-child a:hover {
+    background-color: var(--purpleHover);
+    border: 1px solid black;
+    color: white;
+}
+
+/* ###################### MAIN ###################### */
+
+#main-id {
+    width: 100%;
+    background-color: aqua;
+    min-height: 70vh;
+}
+
+/* ###################### FOOTER ###################### */
+#footer-id {
+    height: 120px;
+}
+
+#top-footer {
+    background-color: var(--greyFooter);
+    height : 50%;
+    display : flex;
+    align-items: center
+}
+
+#bot-footer {
+    background-color: var(--greyFooter);
+    height: 50%;
+    display: flex;
+    align-items: center;
+    background-color : var(--greyFont);
+}
+
+#bot-footer p {
+    margin-left : 20px;
+    color : var(--beigeBackground);
+    font-size : 1.8rem;
+    font-weight : bold;
+}
+
+#ul-footer {
+    display : flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content : center;
+    height : 100%;
+    width : 100%;
+    background-color : var(--greyFooter);
+}
+
+.a-footer:hover {
+    color : var(--purpleHover);
+}
+
+.a-footer {
+    display: block;
+    height: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--greyFont);
+}
+
+.dot-separation {
+    margin-left: 10px;
+    margin-right: 10px;
+    color : var(--greyFont);
+}
