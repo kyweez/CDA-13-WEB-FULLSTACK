@@ -16,15 +16,17 @@ namespace FreeLancerWebApp.Models
         }
 
         [Column("job_state", TypeName = "char(10)", Order = 2)]
-        [Required]
+        [Required(ErrorMessage = "Champs obligatoire")]
+        [Display(Name = "Etat du travail")]
         public string State
         {
             get; private set;
         }
 
         [Column("job_title", Order = 3)]
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Champs obligatoire")]
+        [StringLength(100, ErrorMessage = "Longueur maximum : 100")]
+        [Display(Name = "Nom du travail")]
         public string Title
         {
             get; private set;
@@ -32,6 +34,8 @@ namespace FreeLancerWebApp.Models
 
         [Column("job_start", Order = 4)]
         [DataType(DataType.DateTime)]
+        [Display(Name = "Date de début du travail")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Start
         {
             get; private set;
@@ -39,6 +43,8 @@ namespace FreeLancerWebApp.Models
 
         [Column("job_end", Order = 5)]
         [DataType(DataType.DateTime)]
+        [Display(Name = "Date de fin du travail")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime End
         {
             get; private set;
@@ -57,6 +63,7 @@ namespace FreeLancerWebApp.Models
         }
 
         // Foreign Key
+        [ForeignKey("FK_customer_in_job")]
         [Column("customer_id", Order = 7)]
         public int CustomerID
         {

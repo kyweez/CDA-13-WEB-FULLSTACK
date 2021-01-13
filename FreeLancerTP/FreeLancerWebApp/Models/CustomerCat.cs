@@ -15,7 +15,8 @@ namespace FreeLancerWebApp.Models
         }
 
         [Column("cat_name", Order = 2)]
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage = "Longueur maximum 50")]
+        [Display(Name = "Nom du client")]
         public string Name
         {
             get; set;
@@ -23,6 +24,7 @@ namespace FreeLancerWebApp.Models
 
         [Column("cat_description", Order = 3)]
         [DataType(DataType.MultilineText)]
+        [Display(Name = "Description")]
         public string Description
         {
             get; set;

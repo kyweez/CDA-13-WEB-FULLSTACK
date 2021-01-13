@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FreeLancerWebApp.Migrations
 {
     [DbContext(typeof(FreeLancerDbContext))]
-    [Migration("20210113111656_db_FreeLancerTP")]
-    partial class db_FreeLancerTP
+    [Migration("20210113223958_FreeLanceMigration")]
+    partial class FreeLanceMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,8 +29,9 @@ namespace FreeLancerWebApp.Migrations
                         .HasColumnName("customer_id")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CustomerCatID")
-                        .HasColumnType("int");
+                    b.Property<int>("CustomerCatID")
+                        .HasColumnType("int")
+                        .HasColumnName("cat_id");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -46,6 +47,13 @@ namespace FreeLancerWebApp.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("CustomerCatID");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Name")
+                        .IsUnique()
+                        .HasFilter("[customer_name] IS NOT NULL");
 
                     b.ToTable("customers");
                 });
@@ -69,6 +77,10 @@ namespace FreeLancerWebApp.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("Name")
+                        .IsUnique()
+                        .HasFilter("[cat_name] IS NOT NULL");
+
                     b.ToTable("customer_cats");
                 });
 
@@ -79,6 +91,10 @@ namespace FreeLancerWebApp.Migrations
                         .HasColumnType("int")
                         .HasColumnName("job_id")
                         .UseIdentityColumn();
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)")
@@ -104,6 +120,8 @@ namespace FreeLancerWebApp.Migrations
                         .HasColumnName("job_title");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CustomerID");
 
                     b.ToTable("jobs");
                 });
@@ -132,12 +150,18 @@ namespace FreeLancerWebApp.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("quote_final_date");
 
+                    b.Property<int>("JobID")
+                        .HasColumnType("int")
+                        .HasColumnName("job_id");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("char(10)")
                         .HasColumnName("quote_state");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("JobID");
 
                     b.ToTable("quotes");
                 });
@@ -146,14 +170,48 @@ namespace FreeLancerWebApp.Migrations
                 {
                     b.HasOne("FreeLancerWebApp.Models.CustomerCat", "CustomerCat")
                         .WithMany("Customers")
-                        .HasForeignKey("CustomerCatID");
+                        .HasForeignKey("CustomerCatID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CustomerCat");
+                });
+
+            modelBuilder.Entity("FreeLancerWebApp.Models.Job", b =>
+                {
+                    b.HasOne("FreeLancerWebApp.Models.Customer", "Customer")
+                        .WithMany("Jobs")
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("FreeLancerWebApp.Models.Quote", b =>
+                {
+                    b.HasOne("FreeLancerWebApp.Models.Job", "Job")
+                        .WithMany("Quotes")
+                        .HasForeignKey("JobID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("FreeLancerWebApp.Models.Customer", b =>
+                {
+                    b.Navigation("Jobs");
                 });
 
             modelBuilder.Entity("FreeLancerWebApp.Models.CustomerCat", b =>
                 {
                     b.Navigation("Customers");
+                });
+
+            modelBuilder.Entity("FreeLancerWebApp.Models.Job", b =>
+                {
+                    b.Navigation("Quotes");
                 });
 #pragma warning restore 612, 618
         }

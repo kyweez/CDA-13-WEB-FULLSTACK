@@ -15,22 +15,26 @@ namespace FreeLancerWebApp.Models
         }
 
         [Column("quote_state", TypeName = "char(10)", Order = 2)]
-        [Required]
+        [Required(ErrorMessage = "Champs obligatoire")]
+        [Display(Name = "Etat du devis")]
         public string State
         {
             get; private set;
         }
 
         [Column("quote_date", Order = 3)]
-        [Required]
+        [Required(ErrorMessage = "Champs obligatoire")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date du devis")]
         public DateTime Date
         {
             get; private set;
         }
 
         [Column("quote_amount", Order = 4)]
-        [Required]
+        [Required(ErrorMessage = "Champs obligatoire")]
+        [Display(Name = "Montant du devis")]
         public int Amount
         {
             get; private set;
@@ -38,18 +42,22 @@ namespace FreeLancerWebApp.Models
 
         [Column("quote_final_date", Order = 5)]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date d'acceptation du devis")]
         public DateTime FinalDate
         {
             get; private set;
         }
 
         [Column("quote_final_amount", Order = 6)]
+        [Display(Name = "Montant final")]
         public int FinalAmount
         {
             get; private set;
         }
 
         // Foreign Key
+        [ForeignKey("FK_job_in_quote")]
         [Column("job_id", Order = 7)]
         public int JobID
         {

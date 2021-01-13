@@ -15,23 +15,26 @@ namespace FreeLancerWebApp.Models
         }
 
         [Column("customer_name", Order = 2)]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage = "Longueur maximum : 100")]
         [DataType(DataType.Text)]
+        [Display(Name = "Name")]
         public string Name
         {
             get; set;
         }
 
         [Column("customer_email", Order = 3)]
-        [Required]
-        [MaxLength(255)]
-        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Champs obligatoire")]
+        [MaxLength(255, ErrorMessage = "Longueur maximum : 255")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Email invalide")]
+        [Display(Name = "Email")]
         public string Email
         {
             get; set;
         }
 
         // Foreign Key CustomerCat
+        [ForeignKey("FK_cat_in_customer")]
         [Column("cat_id", Order = 4)]
         public int CustomerCatID
         {
