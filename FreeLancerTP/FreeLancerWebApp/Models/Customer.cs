@@ -9,6 +9,7 @@ namespace FreeLancerWebApp.Models
     {
         [Key]
         [Column("customer_id", Order = 1)]
+        [Display(Name = "Identifiant")]
         public int ID
         {
             get; set;
@@ -17,7 +18,7 @@ namespace FreeLancerWebApp.Models
         [Column("customer_name", Order = 2)]
         [MaxLength(100, ErrorMessage = "Longueur maximum : 100")]
         [DataType(DataType.Text)]
-        [Display(Name = "Name")]
+        [Display(Name = "Nom du client")]
         public string Name
         {
             get; set;
@@ -27,7 +28,7 @@ namespace FreeLancerWebApp.Models
         [Required(ErrorMessage = "Champs obligatoire")]
         [MaxLength(255, ErrorMessage = "Longueur maximum : 255")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email invalide")]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email
         {
             get; set;

@@ -107,6 +107,13 @@ i {
     min-height: 70vh;
 }
 
+.first-section {
+    height: 20%;
+    background-color: orangered;
+    display: flex;
+    flex-direction: column;
+}
+
 /* ###################### FOOTER ###################### */
 #footer-id {
     height: 120px;
@@ -160,4 +167,9 @@ i {
     margin-left: 10px;
     margin-right: 10px;
     color : var(--greyFont);
+}
+
+/* ###################### TABLEAUX ###################### */
+thead {
+    background-color : red;
 }

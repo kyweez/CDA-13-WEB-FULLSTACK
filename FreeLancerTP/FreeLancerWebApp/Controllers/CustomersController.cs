@@ -66,6 +66,7 @@ namespace FreeLancerWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerCatID"] = new SelectList(_context.CustomersCats, "ID", "ID", customer.CustomerCatID);
+            ViewBag.LastCustomer = customer.Name;
             return View(customer);
         }
 
@@ -83,6 +84,7 @@ namespace FreeLancerWebApp.Controllers
                 return NotFound();
             }
             ViewData["CustomerCatID"] = new SelectList(_context.CustomersCats, "ID", "ID", customer.CustomerCatID);
+            ViewBag.LastCustomer = customer.Name;
             return View(customer);
         }
 
@@ -119,6 +121,7 @@ namespace FreeLancerWebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerCatID"] = new SelectList(_context.CustomersCats, "ID", "ID", customer.CustomerCatID);
+            ViewBag.LastCustomer = customer.Name;
             return View(customer);
         }
 

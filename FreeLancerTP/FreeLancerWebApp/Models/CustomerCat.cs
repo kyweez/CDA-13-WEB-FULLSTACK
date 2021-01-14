@@ -16,7 +16,7 @@ namespace FreeLancerWebApp.Models
 
         [Column("cat_name", Order = 2)]
         [MaxLength(50, ErrorMessage = "Longueur maximum 50")]
-        [Display(Name = "Nom du client")]
+        [Display(Name = "Categorie de client")]
         public string Name
         {
             get; set;

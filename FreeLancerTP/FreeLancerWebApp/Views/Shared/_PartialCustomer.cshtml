@@ -1,0 +1,6 @@
+﻿<section class="first-section">
+    <h1>Gestion des clients</h1>
+    <p>Dernier client ajouté : </p>
+    @ViewContext.RouteData.Values["action"]
+    <p class="first-section-button"><a class="first-section-link" asp-action="Create">Ajouter un nouveau client</a></p>
+</section>
